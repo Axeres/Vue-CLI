@@ -1,13 +1,17 @@
+require('./config.coffee');
+require('./styles/main.sass');
+
 import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import App from './layout/index.vue'
+import router from './router/router.coffee'
+import store from './store/store.coffee'
 import './registerServiceWorker'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+Vue.config.devtools = true;
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+    router,
+    store,
+    render: h => h(App)
+}).$mount('#app');
